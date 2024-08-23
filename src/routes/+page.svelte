@@ -3,7 +3,8 @@
 
 	const props = {
 		initialcont: 4,
-		maxCount: 12
+		maxCount: 12,
+		size: '3xl'
 	};
 </script>
 
