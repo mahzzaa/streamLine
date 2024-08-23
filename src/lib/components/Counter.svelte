@@ -18,7 +18,7 @@
 
 <div class="flex justify-between items-center w-full">
 	<button class={`p-3 variant-ghost-primary text-${size} text-base`} on:click={increment}>
-		Click to count up 1
+		<slot></slot>
 	</button>
 
 	{#if message}

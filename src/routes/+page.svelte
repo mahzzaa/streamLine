@@ -1,4 +1,5 @@
 <script>
+	import Button from '$lib/components/Button.svelte';
 	import Counter from '$lib/components/Counter.svelte';
 
 	const props = {
@@ -12,7 +13,8 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
-		<Counter {...props} />
+		<Counter {...props}>please click me i'm testing my nails:))</Counter>
+		<Button />
 		<h2 class="h2">Welcome to Skeleton.</h2>
 		<!-- Animated Logo -->
 		<figure>
