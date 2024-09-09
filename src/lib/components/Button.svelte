@@ -1,11 +1,10 @@
-<script>
-</script>
+<script></script>
 
 <button>
-	<slot>Go back to home page</slot>
+	<slot><p>Go to home page</p></slot>
 </button>
 
-<style>
+<style lang="scss">
 	button {
 		border: none;
 		background-color: blue;
@@ -15,13 +14,6 @@
 		border-radius: 5px;
 		cursor: position;
 		font-size: 20px;
-	}
-
-	button:hover {
-		background-color: aqua;
-		color: black;
-		opacity: 0.2;
-		animation: rotation45 2s infinite;
 	}
 
 	@keyframes rotation45 {
