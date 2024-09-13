@@ -41,6 +41,7 @@
 		}
 		.left-content {
 			padding-right: 10px;
+			// max-width: 40px;
 		}
 		&.has-left {
 			border-left: 2px solid #d9027f;

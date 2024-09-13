@@ -1,6 +1,7 @@
 <script>
 	import Button from '$lib/components/Button.svelte';
 	import Counter from '$lib/components/Counter.svelte';
+	import DiAtom from 'svelte-icons/di/DiAtom.svelte';
 
 	const props = {
 		initialcont: 4,
@@ -15,7 +16,7 @@
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<Counter {...props}>please click me i'm testing my nails:))</Counter>
 		<Button size="small" shadow={true} bgColor="#f7f7f7" textColor="black">
-			<span slot="leftContent"> left slot </span>
+			<div style:width="30px" slot="leftContent"><DiAtom /></div>
 		</Button>
 
 		<h2 class="h2">Welcome to Skeleton.</h2>
