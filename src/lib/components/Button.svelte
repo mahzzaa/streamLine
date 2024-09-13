@@ -11,13 +11,22 @@
 	class:size-lg={size === 'large'}
 	class:size-md={size === 'medium'}
 	class:size-sm={size === 'small'}
+	class:has-left={$$slots.leftContent}
 	class:shadow
 >
+	{#if $$slots.leftContent}
+		<div class="left-content">
+			<slot name="leftContent" />
+		</div>
+	{/if}
 	<slot><p>Go to home page</p></slot>
 </button>
 
 <style lang="scss">
 	button {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		border: none;
 		background-color: blue;
 		color: #fff;
@@ -29,6 +38,13 @@
 		&:hover {
 			// linear gradient in blue theme
 			background: linear-gradient(45deg, #2196f3, #0e0583);
+		}
+		.left-content {
+			padding-right: 10px;
+		}
+		&.has-left {
+			border-left: 2px solid #d9027f;
+			border-right: 2px solid #d9027f;
 		}
 		&.size-lg {
 			padding: 10px 15px;
