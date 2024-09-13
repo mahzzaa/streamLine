@@ -1,6 +1,18 @@
-<script></script>
+<script>
+	export let size = 'medium';
+	export let shadow = false;
+	export let bgColor = undefined;
+	export let textColor = undefined;
+</script>
 
-<button>
+<button
+	style:background-color={bgColor}
+	style:color={textColor}
+	class:size-lg={size === 'large'}
+	class:size-md={size === 'medium'}
+	class:size-sm={size === 'small'}
+	class:shadow
+>
 	<slot><p>Go to home page</p></slot>
 </button>
 
@@ -14,6 +26,25 @@
 		border-radius: 5px;
 		cursor: position;
 		font-size: 20px;
+		&:hover {
+			// linear gradient in blue theme
+			background: linear-gradient(45deg, #2196f3, #0e0583);
+		}
+		&.size-lg {
+			padding: 10px 15px;
+			font-size: 30px;
+		}
+		&.size-md {
+			padding: 15px 20px;
+			font-size: 20px;
+		}
+		&.size-sm {
+			padding: 5px 10px;
+			font-size: 15px;
+		}
+		&.shadow {
+			box-shadow: 0 0 10px rgba(14, 197, 200, 0.5);
+		}
 	}
 
 	@keyframes rotation45 {

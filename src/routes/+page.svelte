@@ -14,7 +14,7 @@
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<Counter {...props}>please click me i'm testing my nails:))</Counter>
-		<Button />
+		<Button size="small" shadow={true} bgColor="red" textColor="white" />
 		<h2 class="h2">Welcome to Skeleton.</h2>
 		<!-- Animated Logo -->
 		<figure>

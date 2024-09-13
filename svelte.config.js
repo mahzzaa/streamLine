@@ -7,7 +7,11 @@ const config = {
 	extensions: ['.svelte'],
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: [sveltePreprocess(), vitePreprocess()],
+	preprocess: [sveltePreprocess({
+		scss: {
+			prependData: '@use "src/styles/variables";'
+		}
+	}), vitePreprocess()],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
