@@ -2,6 +2,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import Counter from '$lib/components/Counter.svelte';
 	import DiAtom from 'svelte-icons/di/DiAtom.svelte';
+	import FaAirFreshener from 'svelte-icons/fa/FaAirFreshener.svelte'
 
 	const props = {
 		initialcont: 4,
@@ -15,10 +16,17 @@
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<Counter {...props}>please click me i'm testing my nails:))</Counter>
-		<Button size="small" shadow={true} bgColor="#f7f7f7" textColor="black">
-			<div style:width="30px" slot="leftContent"><DiAtom /></div>
+		<Button {isLeftHovered} size="small" shadow={true} bgColor="#f7f7f7" textColor="black">
+			<div style="width: 30px;" slot="leftContent">
+				{#if isLeftHovered}
+					<DiAtom />
+				{:else}
+					<FaAirFreshener />
+				{/if}
+			</div>
+			button text
 		</Button>
-
+		
 		<h2 class="h2">Welcome to Skeleton.</h2>
 		<!-- Animated Logo -->
 		<figure>

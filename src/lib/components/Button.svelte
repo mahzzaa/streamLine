@@ -3,6 +3,7 @@
 	export let shadow = false;
 	export let bgColor = undefined;
 	export let textColor = undefined;
+	export let isLeftHovered = false;
 </script>
 
 <button
@@ -15,11 +16,13 @@
 	class:shadow
 >
 	{#if $$slots.leftContent}
-		<div class="left-content">
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<div class="left-content" on:mouseenter={()=> isLeftHovered = true}
+			on:mouseleave={() =>  isLeftHovered =false}>
 			<slot name="leftContent" />
 		</div>
 	{/if}
-	<slot><p>Go to home page</p></slot>
+	<slot {isLeftHovered}><p>Go to home page</p></slot>
 </button>
 
 <style lang="scss">
