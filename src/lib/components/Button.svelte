@@ -7,6 +7,7 @@
 </script>
 
 <button
+on:click
 	style:background-color={bgColor}
 	style:color={textColor}
 	class:size-lg={size === 'large'}

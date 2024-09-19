@@ -16,13 +16,13 @@
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<Counter {...props}>please click me i'm testing my nails:))</Counter>
-		<Button {isLeftHovered} size="small" shadow={true} bgColor="#f7f7f7" textColor="black">
+		<Button on:click|once={() => alert(true)} size="small" shadow={true} bgColor="#f7f7f7" textColor="black">
 			<div style="width: 30px;" slot="leftContent">
-				{#if isLeftHovered}
+				<!-- {#if isLeftHovered} -->
 					<DiAtom />
-				{:else}
+				<!-- {:else}
 					<FaAirFreshener />
-				{/if}
+				{/if} -->
 			</div>
 			button text
 		</Button>
