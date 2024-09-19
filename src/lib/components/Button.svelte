@@ -4,10 +4,15 @@
 	export let bgColor = undefined;
 	export let textColor = undefined;
 	export let isLeftHovered = false;
+	export let disabled = false;
+	console.log($$restProps);
+	
 </script>
 
 <button
-on:click
+{...$$restProps}
+{disabled}
+	on:click
 	style:background-color={bgColor}
 	style:color={textColor}
 	class:size-lg={size === 'large'}
@@ -39,6 +44,10 @@ on:click
 		border-radius: 5px;
 		cursor: position;
 		font-size: 20px;
+		&:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
 		&:hover {
 			// linear gradient in blue theme
 			background: linear-gradient(45deg, #2196f3, #0e0583);

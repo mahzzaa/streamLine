@@ -16,15 +16,22 @@
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<Counter {...props}>please click me i'm testing my nails:))</Counter>
-		<Button on:click|once={() => alert(true)} size="small" shadow={true} bgColor="#f7f7f7" textColor="black">
-			<div style="width: 30px;" slot="leftContent">
-				<!-- {#if isLeftHovered} -->
-					<DiAtom />
-				<!-- {:else}
+		<Button   
+		disabled={true}
+			on:click|once={() => alert(true)} 
+			size="small" 
+			shadow={true} 
+			bgColor="#f7f7f7" 
+			textColor="black"
+			>
+				<div style="width: 30px;" slot="leftContent">
+					<!-- {#if isLeftHovered} -->
 					<FaAirFreshener />
-				{/if} -->
-			</div>
-			button text
+					<!-- {:else}
+					<DiAtom />
+					{/if} -->
+				</div>
+				button text
 		</Button>
 		
 		<h2 class="h2">Welcome to Skeleton.</h2>
