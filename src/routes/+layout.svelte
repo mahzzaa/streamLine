@@ -14,11 +14,11 @@
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
+					href="/todo-list"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Discord
+					Todo List
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
