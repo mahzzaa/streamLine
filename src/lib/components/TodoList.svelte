@@ -1,14 +1,14 @@
 <script lang="ts">
 	export let todos: any = [];
-	let input: any;
+	let inputText: any = '';
 	function handleAddTodo() {
-		console.log(input.value);
+		console.log(inputText);
 	}
 </script>
 
 <div class="flex flex-col items-center justify-center w-full h-full todo-wrapper">
 	<div
-		class="flex flex-col items-center justify-center p-5 space-y-4 rounded-lg w-fit h-fit variant-ghost-tertiary"
+		class="flex flex-col items-center justify-center p-5 space-y-4 rounded-lg w-72 h-fit variant-ghost-tertiary"
 	>
 		<ul class="list-disc">
 			<!-- //why do we need to use (todo.id) here? -->
@@ -27,6 +27,13 @@
 			{/each}
 		</ul>
 
+		<div class="flex flex-col items-start justify-start w-full">
+			<h1>New Todo:</h1>
+			<p class="break-all">
+				{inputText}
+			</p>
+		</div>
+
 		<!-- what is preventDefault -->
 		<form
 			class="flex flex-col items-center justify-center space-y-3"
@@ -35,7 +42,9 @@
 		>
 			<input
 				placeholder="Add a new todo"
-				bind:this={input}
+				on:input={(e) => {
+					inputText = e.currentTarget.value;
+				}}
 				class="p-2 rounded-lg placeholder:text-primary-300 text-primary-700 variant-ghost-primary hover:variant-filled-primary hover:cursor-pointer focus:cursor-text"
 				type="text"
 			/>
