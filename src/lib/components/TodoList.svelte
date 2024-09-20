@@ -1,7 +1,9 @@
 <script lang="ts">
 	export let todos: any = [];
-	let input;
-	function handleAddTodo() {}
+	let input: any;
+	function handleAddTodo() {
+		console.log(input.value);
+	}
 </script>
 
 <div class="flex flex-col items-center justify-center w-full h-full todo-wrapper">
