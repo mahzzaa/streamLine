@@ -16,7 +16,7 @@
 	}
 </script>
 
-<div class="flex justify-between items-center w-full">
+<div class="flex items-center justify-between w-full">
 	<button class={`p-3 variant-ghost-primary text-${size} text-base`} on:click={increment}>
 		<slot></slot>
 	</button>

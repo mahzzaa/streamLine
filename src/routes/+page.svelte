@@ -13,8 +13,8 @@
 
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-10 text-center flex flex-col items-center">
+<div class="container flex items-center justify-center h-full mx-auto">
+	<div class="flex flex-col items-center space-y-10 text-center">
 		<Counter {...props}>please click me i'm testing my nails:))</Counter>
 		<Button   
 		disabled={true}
