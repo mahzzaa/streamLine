@@ -1,8 +1,8 @@
-<script lang="ts">
-	export let todos: any = [];
-	let inputText: any = '';
+<script>
+	export let todos = [];
+	let inputText = '';
 	function handleAddTodo() {
-		console.log(inputText);
+		if (!inputText) return;
 	}
 </script>
 
@@ -47,7 +47,8 @@
 				type="text"
 			/>
 			<button
-				class="px-4 py-1 rounded-lg text-success-500 hover:text-primary-900 focus:text-primary-900 variant-outline-success hover:variant-filled-success"
+				disabled={inputText === ''}
+				class="px-4 py-1 rounded-lg text-success-500 hover:text-primary-900 focus:text-primary-900 variant-filled-success"
 				type="submit">Add</button
 			>
 		</form>
