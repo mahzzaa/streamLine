@@ -42,9 +42,7 @@
 		>
 			<input
 				placeholder="Add a new todo"
-				on:input={(e) => {
-					inputText = e.currentTarget.value;
-				}}
+				bind:value={inputText}
 				class="p-2 rounded-lg placeholder:text-primary-300 text-primary-700 variant-ghost-primary hover:variant-filled-primary hover:cursor-pointer focus:cursor-text"
 				type="text"
 			/>
