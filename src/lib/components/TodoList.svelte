@@ -2,6 +2,7 @@
 	import { v4 as uuid } from 'uuid';
 
 	export let todos = [];
+	export let initialTodos = [];
 	console.log(todos);
 
 	let inputText = '';
@@ -24,9 +25,13 @@
 		];
 		inputText = '';
 	}
+
+	function handleRemoveTodo() {
+		todos = [...initialTodos];
+	}
 </script>
 
-<div class="flex flex-col items-center justify-center w-full h-full todo-wrapper">
+<div class="flex flex-col items-center justify-center todo-wrapper">
 	<div
 		class="flex flex-col items-center justify-center p-5 space-y-4 rounded-lg w-72 h-fit variant-ghost-tertiary"
 	>
@@ -66,11 +71,23 @@
 				class="p-2 rounded-lg placeholder:text-primary-300 text-primary-700 variant-ghost-primary hover:variant-filled-primary hover:cursor-pointer focus:cursor-text"
 				type="text"
 			/>
-			<button
-				disabled={!inputText}
-				class="px-4 py-1 rounded-lg disabled:bg-slate-400 disabled:cursor-not-allowed text-success-500 variant-filled-success"
-				type="submit">Add</button
-			>
+			<div class="flex items-center justify-between w-full">
+				<button
+					disabled={!inputText}
+					class="px-4 py-1 rounded-lg disabled:bg-slate-400 disabled:cursor-not-allowed text-success-500 variant-filled-success"
+					type="submit"
+				>
+					Add
+				</button>
+
+				<button
+					on:click={handleRemoveTodo}
+					class="px-4 py-1 rounded-lg text-success-500 hover:text-blue-300 variant-filled-secondary hover:variant-ghost-secondary"
+					type="submit"
+				>
+					Reset
+				</button>
+			</div>
 		</form>
 	</div>
 </div>
