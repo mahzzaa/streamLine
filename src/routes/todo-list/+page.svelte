@@ -25,7 +25,12 @@
 	// @ts-ignore
 	function handleAddTodo(event) {
 		// event.preventDefault();
-		console.log(event.detail.title);
+		todos.push({
+			id: uuid(),
+			title: event.detail.title,
+			completed: false
+		});
+		todos = todos;
 	}
 </script>
 

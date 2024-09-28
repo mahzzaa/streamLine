@@ -1,8 +1,13 @@
+<svelte:options immutable={false} />
+
 <script>
 	// @ts-ignore
 	import { popup } from '@skeletonlabs/skeleton';
 	import { createEventDispatcher } from 'svelte';
 	// @ts-ignore
+	/**
+	 * @type {any[]}
+	 */
 	export let todos = [];
 
 	// ? what is dispatch and createEventDispatcher
@@ -80,6 +85,7 @@
 				</button>
 
 				<button
+					disabled
 					on:click={handleRemoveTodo}
 					class="px-4 py-1 rounded-lg text-success-500 hover:text-blue-300 variant-filled-secondary hover:variant-ghost-secondary"
 					type="submit"
