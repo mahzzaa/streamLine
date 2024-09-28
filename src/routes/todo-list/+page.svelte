@@ -1,8 +1,9 @@
 <script>
 	import TodoList from '$lib/components/TodoList.svelte';
+	// @ts-ignore
 	import { v4 as uuid } from 'uuid';
 
-	let initialTodos = [
+	let todos = [
 		{
 			// why we use uuid() here? what does it do?
 			id: uuid(),
@@ -21,19 +22,16 @@
 		}
 	];
 
-	let todos = [...initialTodos];
+	// @ts-ignore
+	function handleAddTodo(event) {
+		// event.preventDefault();
+		console.log(event.detail.title);
+	}
 </script>
 
 <div class="flex flex-col items-center justify-center w-full h-full space-y-7">
 	<h1>
 		{todos.length} Todos
 	</h1>
-	<TodoList bind:todos {initialTodos} />
-	<!-- <button
-		on:click={() => {
-			todos = [];
-		}}
-	>
-		Restart Todos
-	</button> -->
+	<TodoList {todos} on:addtodo={handleAddTodo} />
 </div>

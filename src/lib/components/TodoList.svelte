@@ -1,34 +1,33 @@
 <script>
-	import { v4 as uuid } from 'uuid';
-
+	// @ts-ignore
+	import { popup } from '@skeletonlabs/skeleton';
+	import { createEventDispatcher } from 'svelte';
+	// @ts-ignore
 	export let todos = [];
-	export let initialTodos = [];
-	console.log(todos);
+
+	// ? what is dispatch and createEventDispatcher
+
+	const dispatch = createEventDispatcher();
 
 	let inputText = '';
 	function handleAddTodo() {
-		if (!inputText) return;
-		// todos.push({
-		// 	id: uuid(),
-		// 	title: inputText,
-		// 	completed: false
-		// });
-		// todos = todos;
-
-		todos = [
-			...todos,
+		const isNotCancelled = dispatch(
+			'addtodo',
 			{
-				id: uuid(),
-				title: inputText,
-				completed: false
+				title: inputText
+			},
+			{
+				cancelable: true
 			}
-		];
-		inputText = '';
+		);
+
+		if (isNotCancelled) {
+			// @ts-ignore
+			console.log('Todo added:', inputText);
+		}
 	}
 
-	function handleRemoveTodo() {
-		todos = [...initialTodos];
-	}
+	function handleRemoveTodo() {}
 </script>
 
 <div class="flex flex-col items-center justify-center todo-wrapper">
